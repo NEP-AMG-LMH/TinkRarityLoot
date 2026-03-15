@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tinkrarityloot:item/lootbox_ranged_common"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 1.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_uncommon"
+    },
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 2.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_rare"
+    },
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 3.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_epic"
+    },
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 4.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_unique"
+    },
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 5.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_legendary"
+    },
+    {
+      "predicate": {
+        "tinkrarityloot:rarity": 6.0
+      },
+      "model": "tinkrarityloot:item/lootbox_ranged_mythic"
+    }
+  ]
+}

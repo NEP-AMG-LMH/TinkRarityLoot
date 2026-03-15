@@ -1,0 +1,49 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+issueTrackerURL="https://github.com/yourname/TinkRarityLoot/issues"
+
+[[mods]]
+    modId="tinkrarityloot"
+    version="${file.jarVersion}"
+    displayName="TinkRarityLoot"
+    description='''
+        Bridges Tinkers' Construct parts into a true ARPG loot system
+        driven by Mine and Slash progression, with Apotheosis/Apothic Gems
+        sharing the same rarity tier.
+    '''
+
+[[dependencies.tinkrarityloot]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.2.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.tinkrarityloot]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.tinkrarityloot]]
+    modId="tconstruct"
+    mandatory=true
+    versionRange="[3.8,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.tinkrarityloot]]
+    modId="mineandslash"
+    mandatory=false
+    versionRange="[*,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.tinkrarityloot]]
+    modId="apotheosis"
+    mandatory=false
+    versionRange="[*,)"
+    ordering="AFTER"
+    side="BOTH"

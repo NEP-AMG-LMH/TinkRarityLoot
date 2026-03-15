@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tinkrarityloot:item/lootbox_common"
+  },
+  "overrides": [
+    { "predicate": { "tinkrarityloot:rarity": 1.0 }, "model": "tinkrarityloot:item/lootbox_uncommon" },
+    { "predicate": { "tinkrarityloot:rarity": 2.0 }, "model": "tinkrarityloot:item/lootbox_rare"     },
+    { "predicate": { "tinkrarityloot:rarity": 3.0 }, "model": "tinkrarityloot:item/lootbox_epic"     },
+    { "predicate": { "tinkrarityloot:rarity": 4.0 }, "model": "tinkrarityloot:item/lootbox_unique"   },
+    { "predicate": { "tinkrarityloot:rarity": 5.0 }, "model": "tinkrarityloot:item/lootbox_legendary"},
+    { "predicate": { "tinkrarityloot:rarity": 6.0 }, "model": "tinkrarityloot:item/lootbox_mythic"   }
+  ]
+}

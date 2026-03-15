@@ -1,0 +1,70 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
+
+version = '1.0.0'
+group = 'com.tinkrarityloot'
+archivesBaseName = 'tinkrarityloot'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'parchment', version: '2023.09.03-1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods { tinkrarityloot { source sourceSets.main } }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods { tinkrarityloot { source sourceSets.main } }
+        }
+    }
+}
+
+repositories {
+    // Only ForgeGradle itself needs a repo; all mod deps are now local jars.
+    maven { url = 'https://maven.minecraftforge.net' }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
+
+    // ── Local jars from your GregRPG instance ────────────────────────────────
+    // These bypass Maven resolution entirely and use the exact jars you already
+    // have installed.  If a filename differs, update just that one line.
+
+    // Tinkers' Construct + Mantle (required at compile time)
+    compileOnly files('/home/niko/Documents/curseforge/minecraft/Instances/GregRPG/mods/TConstruct-1.20.1-3.11.2.166.jar')
+    compileOnly files('/home/niko/Documents/curseforge/minecraft/Instances/GregRPG/mods/Mantle-1.20.1-1.11.104.jar')
+
+    // JEI (optional — comment out if you don't want the JEI info page)
+    compileOnly files('/home/niko/Documents/curseforge/minecraft/Instances/GregRPG/mods/jei-1.20.1-forge-15.20.0.129.jar')
+
+    // Apotheosis + Placebo (optional — soft compat uses reflection, but having
+    // the jars here gives you IDE completion for future work)
+    compileOnly files('/home/niko/Documents/curseforge/minecraft/Instances/GregRPG/mods/Apotheosis-1.20.1-7.4.8.jar')
+    compileOnly files('/home/niko/Documents/curseforge/minecraft/Instances/GregRPG/mods/Placebo-1.20.1-8.6.3.jar')
+}
+
+jar.finalizedBy('reobfJar')
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'     : 'tinkrarityloot',
+            'Specification-Vendor'    : 'tinkrarityloot',
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.jar.archiveVersion,
+            'Implementation-Vendor'   : 'tinkrarityloot',
+            'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}

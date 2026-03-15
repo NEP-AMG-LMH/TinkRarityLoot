@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tinkrarityloot:item/lootbox_ranged_common"
+  }
+}
